@@ -166,13 +166,13 @@ body{
 }
 
 #home {
-	float: left;
-	font-family: 'Oswald', sans-serif !important;
-	font-size: 22px;
-	width: 900px;
-	line-height: 30px;
-	margin: 0 0 0 6%;
-	height: 50px;
+    float: left;
+    font-family: "Oswald",sans-serif !important;
+    font-size: 22px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0 0 6%;
+    width: 900px;
 }
 
 #copy_gris{
@@ -268,6 +268,7 @@ body{
      height: 325px;
      margin: 35px 0;
      float: left;
+     box-sizing: initial;
  } 
  
  .pyaMenu a{
@@ -278,20 +279,26 @@ body{
      font-family: Oswald,Tahoma, Verdana, Segoe, sans-serif;
      font-size: 16px;
      font-weight: bold;
-     padding: 20px 0 0 30px;
+     padding: 20px 0 0 15px;
      color: #ffffff;
+     box-sizing: initial;
+     text-decoration: none;
  }
  
  .pyaMenuSelected{
      background: url(../img/bgpyamenuhover.png) no-repeat !important;
+     text-decoration: none;
+     color: #ffffff;
  }
  
  .pyaMenuSelected span{
-     margin-right: 45px !important;
+     margin-right: 33px !important;
  }
  
  .pyaMenu a:hover{
      background: url(../img/bgpyamenuhover.png) no-repeat;
+     text-decoration: none;
+     color: #ffffff;
  }
  
  #pya article{
@@ -306,20 +313,24 @@ body{
  
  #tya, #mc {
     height: 60px;
-    padding: 5px 0 0 30px;
+    padding: 5px 0 0 15px;
 }
 
 #tya span, #ilnt span, #sincro span, #protec span, #mc span{
     width: 65px;
     height: 53px;
     float: right;
-    margin-right: 60px;
+    margin-right: 45px;
     margin-top: -15px;
     display: block;
 }
 
 #tya:hover span, #ilnt:hover span, #sincro:hover span, #protec:hover span, #mc:hover span{
-    margin-right: 48px;
+    margin-right: 33px;
+}
+
+#mc:hover span{
+    margin-top: -20px;
 }
 
 #tya span{
@@ -341,7 +352,59 @@ body{
 
 #mc span{
     background: url(../img/mc.png) no-repeat;
-    margin-top: -25px;
+    margin-top: -23px;
+}
+
+#mc.pyaMenuSelected span {
+    margin-top: -22px !important;
+}   
+
+.colModal {
+    float: left;
+    margin: 8px;
+    width: 304px;
+}
+
+.colModal p{
+    color: #383D42;
+    font-size: 11px;
+    font-family: Arial;
+}
+
+.colModal li{
+    color: #383D42;
+    font-size: 11px;
+    font-family: Arial;
+    margin-left: 20px;
+}
+
+.colModal h3{
+    color: #F3901E;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Oswald, sans-serif !important;
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-body {
+    padding: 0 20px !important;
+}
+
+.modal-footer {
+    border-top: none !important;
+    margin-top: 15px !important;
+    padding: 10px 0 !important;
+}
+
+.modal-lg{
+    width: 700px !important;
+}
+
+.modal-footer{
+    clear: both;
 }
 
 .empresas_equitel{
@@ -1194,8 +1257,64 @@ body{
     text-decoration: none;
  }
 
+.controls {
+    margin: 200px 0 0 -16px;
+    position: absolute;
+    width: 99%;
+}
 
+.list li{
+    clear: both;
+    list-style: outside url("../img/vineta.png") disc !important;
+}
 
+.jcarousel li {
+    list-style: outside none none;
+}
 
+ .jcarousel-control-prev, .jcarousel-control-next {
+    display: block;
+    font-size: 0;
+    height: 45px !important;
+    width: 27px;
+    opacity: 1 !important;
+    position: relative;
+    /*background: rgba(0, 0, 0, 0) url("../images/slider_flechas.png") repeat scroll 0 0;
+    display: block;
+    font-size: 0;
+    height: 20px !important;
+    opacity: 1 !important;
+    position: relative;
+    top: 100% !important;
+    transition: none 0s ease 0s !important;
+    width: 20px !important;
+    z-index: 1000;*/
+}
 
+.jcarousel-control-prev {
+    background: rgba(0, 0, 0, 0) url("../img/back.png") no-repeat scroll 0 0;
+    float: left;
+}
+
+.jcarousel-control-prev:hover {
+    background: rgba(0, 0, 0, 0) url("../img/backHover.png") no-repeat scroll 0 0;
+}
+
+.jcarousel-control-next {
+    background: rgba(0, 0, 0, 0) url("../img/next.png") no-repeat scroll 0 0;
+    /*background-position: right top;*/
+    float: right;
+}
+
+.jcarousel-control-next:hover {
+    background: rgba(0, 0, 0, 0) url("../img/nextHover.png") no-repeat scroll 0 0;
+}
+
+.inactive{
+    display: none;
+}
+
+.active{
+    display: block;
+}
 

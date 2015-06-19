@@ -11,13 +11,18 @@ hidroeléctricas, instalación y mantenimiento." />
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
 <link rel="stylesheet" type="text/css" href="estilos/style.css" />
 <link rel="stylesheet" href="estilos/orbit-1.2.3.css" />
+<link type="text/css" href="estilos/bootstrap.min.css" rel="stylesheet" />
+<link type="text/css" href="estilos/jcarousel.css" rel="stylesheet" />
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
 
 <!-- jQuery library -->
-<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 
 <!-- Slider library -->
 <script src="js/jquery.orbit-1.2.3.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/jquery.jcarousel.min.js" type="text/javascript"></script>
+<script src="js/jcarousel.skeleton.js" type="text/javascript"></script>
 <script src="js/loadModules.js" type="text/javascript"></script>
 <!--[if IE]>
 <script type="text/javascript">
@@ -32,10 +37,6 @@ document.createElement(e[i]);
         function selectMenu(t){
             $(".pyaMenu > a").removeClass("pyaMenuSelected");
             $(t).addClass('pyaMenuSelected');
-            /*var str = "";
-            for(xx in t)
-                str += xx+" -> "+t[xx]+"\n";
-            alert(str);*/
         }
         
 	$(window).load(function() {
@@ -88,11 +89,11 @@ document.createElement(e[i]);
 </div>
 <article id="pya">
     <div class="pyaMenu">
-        <a href="#" onclick="selectMenu(this); return false" id="tya">Transferencias<br/>automáticas <span></span></a>
-        <a href="#" onclick="selectMenu(this); return false" id="ilnt">Inte Lite NT<span></span></a>
-        <a href="#" onclick="selectMenu(this); return false" id="sincro">Sincronismos<span></span></a>
-        <a href="#" onclick="selectMenu(this); return false" id="protec">Protecciones<span></span></a>
-        <a href="#" onclick="selectMenu(this); return false" id="mc">Módulo de<br/>comunicaciones<span></span></a> 
+        <a href="#" data-target="#transAuto" data-toggle="modal" onclick="selectMenu(this); return false" id="tya">Transferencias<br/>automáticas <span></span></a>
+        <a href="#" data-target="#InteLiteNT" data-toggle="modal" onclick="selectMenu(this); return false" id="ilnt">Inte Lite NT<span></span></a>
+        <a href="#" data-target="#sincronismos" data-toggle="modal" onclick="selectMenu(this); return false" id="sincro">Sincronismos<span></span></a>
+        <a href="#" data-target="#protecciones" data-toggle="modal" onclick="selectMenu(this); return false" id="protec">Protecciones<span></span></a>
+        <a href="#" data-target="#comunicaciones" data-toggle="modal" onclick="selectMenu(this); return false" id="mc">Módulo de<br/>comunicaciones<span></span></a> 
     </div>
     <article id="articulo">
     ComAp tiene distintas familias de controladores que se adaptan a los
@@ -101,13 +102,417 @@ document.createElement(e[i]);
     </article>
 </article>
 
-
-
+<div aria-hidden="true" aria-labelledby="largeModal" role="dialog" tabindex="-1" id="transAuto" class="modal fade" style="display: none;">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4 id="myModalLabel" class="modal-title"></h4>
+            
+          </div>
+          <div class="modal-body">
+              <div class="colModal">
+                  <img src="img/pwr.png" border="0"/>
+                  <br/><br/><br/>
+                  <img src="img/std.png" border="0"/>
+              </div>
+              <div class="colModal">
+                  <img src="img/descripcion.png" border="0"/>
+                  <p>
+                    Los controladores InteliATSNT son diseñados para monitorear la
+                    red comercial (1 o 3 fases) por sobre y bajo voltaje, sobre y baja
+                    frecuencia, y desbalance de voltaje. En caso de alguna
+                    falla de la red comercial enviará una señal de arranque remoto al
+                    grupo electrógeno y realizará la transferencia operando con
+                    seguridad ambos contactores del generador y la red comercial.
+                    El generador requerirá un controlador capaz de recibir señales
+                    de arranque remoto (tipo ComAp InteliLiteNT MRS).
+                  </p>
+                  <h3>Ventajas</h3>
+                  <p>
+                    <ul>    
+                        <li>Transferencia entre red comercial y grupo electrógeno.</li>
+                        <li>Transición abierta.</li>
+                        <li>Transición en fase (sincronización pasiva).</li>
+                        <li>Transición cerrada (sincronización pasiva, paralelo de corto tiempo).</li>
+                        <li>Configuración en sitio (por pantalla).</li>
+                        <li>Menos componentes y cableado.</li>
+                        <li>Menos ingeniería y programación.</li>
+                        <li>Monitoreo remoto, ofreciendo, menores costos de servicio técnico</li>
+                    </ul>
+                  </p>
+                  <p>
+                      <img src="img/ATSpwr.png" border="0" style="margin-right: 49px;" />
+                      <img src="img/ATSstd.png" border="0"/>
+                  </p>
+              </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
 </div>
 
+<div aria-hidden="true" aria-labelledby="largeModal" role="dialog" tabindex="-1" id="InteLiteNT" class="modal fade" style="display: none;">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4 id="myModalLabel" class="modal-title"></h4>
+            
+          </div>
+          <div class="modal-body">
+              <div class="colModal">
+                  <img src="img/mrs16.png" border="0"/>
+                  <br/><br/><br/>
+                  <img src="img/amf25.png" border="0"/>
+              </div>
+              <div class="colModal">
+                  <img src="img/descripcion.png" border="0"/>
+                  <p>
+                    La gama de controladores InteliLiteNT ofrece una amplia
+                    variedad de soluciones de control para grupos electrógenos
+                    individuales en aplicaciones de emergencia o manuales.
+                    Basados en la arquitectura InteliLite ya probada en campo, ésta
+                    familia de controladores cumple todos los requisitos desde el
+                    más simple al más complejo, tanto para aplicaciones AMF
+                    como para MRS, con modelos específicos que proporcionan
+                    control vía módem e Internet, fácil configuración, monitoreo
+                    y protección completa del grupo electrógeno.
+                  </p>
+                  <h3>Ventajas</h3>
+                  <p>
+                    <ul>    
+                        <li>Menos cableado y componentes.</li>
+                        <li>Menos ingeniería y programación.</li>
+                        <li>Opción adicional de 8 entradas y salidas binarias.</li>
+                        <li>Opción de comunicación por Internet con control y monitoreo vía páginas web.</li>
+                        <li>Soporte para Internet inalámbrico.</li>
+                        <li>Opción de envío de emails y mensajes SMS.</li>
+                        <li>Comunicación directa con motores EFl.</li>
+                    </ul>
+                  </p>
+                  <p>
+                      <img src="img/ATSmrs16.png" border="0" style="margin-right: 49px;" />
+                      <img src="img/ATSamf25.png" border="0"/>
+                  </p>
+              </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="largeModal" role="dialog" tabindex="-1" id="sincronismos" class="modal fade" style="display: none;">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4 id="myModalLabel" class="modal-title"></h4>
+            
+          </div>
+          <div class="modal-body">
+              <div class="colModal">
+                  <img src="img/inteligentnt.png" border="0"/>
+              </div>
+              <div class="colModal">
+                  <img src="img/descripcion.png" border="0"/>
+                  <p>
+                    Controladores GECON proporcionan integral protección del
+                    generador y control para el solo o múltiples grupos electrógenos
+                    basados en campo probados InteliGenNT y InteliSysNT
+                    plataformas.
+                  </p>
+                  <h3>Beneficios</h3>
+                  <p>
+                    <ul> 
+                        <li>Excelente capacidad de configuración permite a los usuario es personalizar a las necesidades de su aplicación.</li>
+                        <li>Opción para leer información del ECU.</li>
+                        <li>Gestión de alimentación a través de diversos motores de diferentes productores.</li>
+                        <li>Opcional: establece la frecuencia de paso de 0,1 Hz.</li>
+                        <li>Elección de opciones de comunicación a distancia asegura una fácil supervisión y mantenimiento.</li>
+                        <li>Construido en funciones de PLC elimina la necesidad de un controlador PLC externo.</li>
+                        <li>Precio perfecto relación / calidad.</li>
+                        <li>Gen-Set registro de rendimiento para facilitar el problema de rastreo.</li>
+                        <li>Ejecución de aplicaciones SPI y SPTM sin dongle.</li>
+                    </ul>
+                  </p>
+              </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="largeModal" role="dialog" tabindex="-1" id="protecciones" class="modal fade" style="display: none;">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4 id="myModalLabel" class="modal-title"></h4>
+            
+          </div>
+          <div class="modal-body">
+                <div class="controls">
+                        <a href="#" class="jcarousel-control-prev"></a>
+                        <a href="#" class="jcarousel-control-next"></a>
+                </div>
+                <div class="jcarousel">
+                    <ul style="left: 0px; top: 0px;">
+                        <li>
+                            <div class="colModal">
+                                <img src="img/intelipro.png" border="0"/>
+                            </div>
+                            <div class="colModal">
+                                <img src="img/descripcion.png" border="0"/>
+                                <p>
+                                    Características avanzadas de protección, comunicaciones
+                                    remotas y el registro de datos hacen al InteliPro una protección
+                                    ideal para su inversión del grupo conectado a la utilización.
+                                </p>
+                                <h3>Beneficios</h3>
+                                <p>
+                                    <ul class="list"> 
+                                      <li>Cumple con las normas G59/2, G10, IEC 60255, IEEE1547<br/>, VDE-V-0126-1-1.</li>
+                                      <li>Posibilidad de habilitar las funciones apropiadas requeridas<br/>por la red.</li>
+                                      <li>Histórico detallado que registra la naturaleza de <br/>perturbaciones y cortes en la red.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="colModal">
+                                <img src="img/mainspro.png" border="0"/>
+                            </div>
+                            <div class="colModal">
+                                <img src="img/descripcion.png" border="0"/>
+                                <p>
+                                    MainsPro es esencial para evitar el suministro de la electricidad
+                                    en una red aislada, dando lugar a posibles daños al equipo o
+                                    problemas de seguridad.
+                                </p>
+                                <h3>Beneficios</h3>
+                                <p>
+                                  <ul class="list"> 
+                                      <li>Cumple con los requerimientos europeos (G59/2,<BR/>PPDS/P4,EN 60255).</li>
+                                      <li>Alimentación universal CA y CC.</li>
+                                      <li>Combinación única del Salto de Vector y ROCOF en una<BR/>unidad.</li>
+                                      <li>Opcional: establece la frecuencia de paso de 0,1 Hz.<BR/>Tensión positiva y negativa para detección sensible<BR/>de la asimetría.</li>
+                                      <li>Funcionamiento remoto mediante interruptores binarios<BR/>y salidas a relé.</li>
+                                      <li>Indicación de las condiciones de la instalación durante<BR/>los disparos.</li>
+                                      <li>Flexibilidad de aplicaciones (1 o 3 fases, 120/230/400 Vac).</li>
+                                  </ul>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="colModal">
+                                <img src="img/intelidrivelite.png" border="0"/>
+                            </div>
+                            <div class="colModal">
+                                <img src="img/caracteristicas.jpg" border="0"/>
+                                <p>
+                                  <ul class="list"> 
+                                      <li>Controlador de motor Bombas y Compresores.</li>
+                                      <li>Arranque / parada automática o manual del motor.</li>
+                                      <li>Botón programable de encendido / apagado del panel.</li>
+                                      <li>Apoyo de los motores de la Unidad de Control Electrónico<BR/>
+                                        (ECU) - J1939 o Cummins Modbus.</li>
+                                      <li>Indicador analógico salidas (VDO, DATCON y otros)<br/>
+                                        operador amigable.</li>
+                                      <li>Control de velocidad del motor Smooth.</li>
+                                      <li>7 entradas binarias configurables.</li>
+                                      <li>7 salidas binarias configurables.</li>
+                                      <li>7 entradas analógicas configurables (3 resistivas,<br/>
+                                          4 de voltaje) + 2 entradas de tensión no configurables.</li>
+                                      <li>Protecciones seleccionables de alarma / apagado.</li>
+                                      <li>USB, RS485 / RS232 / Modem / comunicación Modbus.</li>
+                                      <li>SMS automático de alarma.</li>
+                                      <li>Certificaciones EN, UL.</li>
+                                      
+                                  </ul>
+                                </p>
+                            </div>
+                        </li
+                        <li>
+                            <div class="colModal">
+                                <img src="img/intelidrivenano.png" border="0"/>
+                            </div>
+                            <div class="colModal">
+                                <img src="img/caracteristicas.jpg" border="0"/>
+                                <p>
+                                  <ul class="list">
+                                      <li>Controlador de motor Bombas y Compresores.</li>
+                                      <li>Arranque / parada automática y control de velocidad para<BR/>
+                                        motores de velocidad variable.</li>
+                                      <li>Ajuste manual de la velocidad del motor por velocidad Trim,<BR/>
+                                        paneles botones arriba / abajo o de forma remota con sólo<BR/>
+                                        interruptor.</li>
+                                      <li>Control automático del motor RPM por ejemplo, bucle de<BR/>
+                                        presión.</li>
+                                      <li>Interfaz analógica para motores mecánicos.</li>
+                                      <li>Exceso de velocidad, presión de aceite, temperatura del<BR/>
+                                        refrigerante, nivel de combustible, y otras protecciones<BR/>
+                                        ajustables.</li>
+                                      <li>10 artículos registro historia gráfica.</li>
+                                      <li>Configuración del panel o herramienta para PC DriveEdit<BR/>
+                                        sobre la interfaz USB.</li>
+                                      <li>4 entradas binarias.</li>
+                                      <li>8 entradas analógicas - 3x VDO, 3x 20 mA, 1x ohmio.</li>
+                                      <li>2 salidas analógicas 5 VDC.</li>
+                                      <li>3 LED del panel.</li>
+                                      <li>Fuente de alimentación 8 - 36VDC.</li>
+                                      <li>Protección contra polvo y agua IP 65 (panel frontal).</li>
+                                  </ul>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+</div>
+<div aria-hidden="true" aria-labelledby="largeModal" role="dialog" tabindex="-1" id="comunicaciones" class="modal fade" style="display: none;">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4 id="myModalLabel" class="modal-title"></h4>
+            
+          </div>
+          <div class="modal-body">
+                <div class="controls">
+                        <a href="#" class="jcarousel-control-prev"></a>
+                        <a href="#" class="jcarousel-control-next"></a>
+                </div>
+                <div class="jcarousel">
+                    <ul style="left: 0px; top: 0px;">
+                        <li>
+                            <div class="colModal">
+                                <img src="img/IL-NT-S-USB.png" border="0"/>
+                                <img src="img/IB-LITE.png" border="0"/>
+                            </div>
+                            <div class="colModal">
+                                <img src="img/descripcion.png" border="0"/>
+                                <h3>Descripción de IL-NT-S USB</h3>
+                                <p>
+                                    <ul class="list"> 
+                                      <li>Módulo de servicio USB.</li>
+                                      <li>Módulo de comunicación fácilmente extraíble plug-in con<br/>
+                                          interfaz de dispositivo USB. Para InteliLite NT, NT<br/>
+                                          InteliCompact, controladores InteliDrive Lite y sus clones.</li>
+                                    </ul>
+                                </p>
+                                <h3>Descripción de IB- LITE</h3>
+                                <p>
+                                    <ul class="list"> 
+                                      <li>Internet / módulo Ethernet incluyendo Servidor Web.</li>
+                                      <li>Módulo PLUG-IN de comunicación para InteliATS NT, InteliLite<br/>
+                                        NT, InteliCompact NT y InteliDrive Lite controladores y<br/>
+                                        sus clones.</li>
+                                      <li>Interfaz de Ethernet 10/100 MBit en conector RJ45.</li>
+                                      <li>Interfaz web para monitoreo básico y el ajuste del<br/>
+                                        controlador.</li>
+                                      <li>ComAp / protocolo TCP para acceso remoto desde LiteEdit<br/>
+                                        o InteliMonitor.</li>
+                                      <li>Protocolo Modbus / TCP para la integración del controlador<br/>
+                                        en la construcción de sistemas de gestión u otros efectos de<br/>
+                                        control remoto.</li>
+                                      <li>Protocolo SMTP con autenticación para el envío de correos<br/>
+                                        electrónicos activos.</li>
+                                      <li>Configuración y actualización de firmware basado en la Web<br/>
+                                        del módulo.</li>
+                                      <li></li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="colModal">
+                                <img src="img/IL-NTT-RS232-485.png" border="0"/>
+                                <img src="img/IL-NTT-RS232.png" border="0"/>
+                            </div>
+                            <div class="colModal">
+                                <img src="img/descripcion.png" border="0"/>
+                                <h3>Descripción de IL-NTT-RS232-485</h3>
+                                <p>
+                                    <ul class="list"> 
+                                      <li>Módulo de puerto dual con interfaces RS232 y RS485 en<br/>
+                                            canales COM independientes. El RS232 está conectado a<br/>
+                                            COM1 y COM2 RS485.</li>
+                                      <li>Compatible con InteliLite NT, InteliCompact NT<br/>
+                                          y InteliDrive Lite.</li>
+                                    </ul>
+                                </p>
+                                <br/><br/><br/><br/><br/><br/>
+                                <h3>Descripción de IL-NTT-RS232</h3>
+                                <p>
+                                  <ul class="list"> 
+                                      <li>Tablero de extensión que contiene el puerto RS232 para<br/>
+                                            InteliLite NT, InteliCompact NT y controladores<br/>
+                                            InteliDrive Lite</li>
+                                  </ul>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="colModal">
+                                <img src="img/IL-NT-GPRS.png" border="0"/>
+                                <img src="img/INTERNET BRIDGE NT.png" border="0"/>
+                            </div>
+                            <div class="colModal">
+                                <img src="img/descripcion.png" border="0"/>
+                                <h3>Descripción de IL-NT-GPRS</h3>
+                                <p>
+                                  <ul class="list"> 
+                                      <li>Módulo Plug-in de comunicación para controladores<br/>
+                                        InteliLite NT, InteliCompact NT y InteliDrive Lite y sus clones.</li>
+                                      <li>La función de módem GSM para conexión de acceso<br/>
+                                        telefónico.</li>
+                                      <li>Soporte GPRS para la conexión inalámbrica a Internet.</li>
+                                      <li>El apoyo del sistema WebSupervisor para la monitorización<br/>
+                                        basada en web y control de uno o varios controladores<br/>
+                                        a la vez.</li>
+                                  </ul>
+                                </p>
+                                <br/>
+                                <h3>Descripción de BRIDGE-NT</h3>
+                                <p>
+                                  <ul class="list"> 
+                                      <li>Módulo de comunicación con conexión celular / Ethernet.</li>
+                                      <li>Conexión a Internet para uno o más controladores ComAp,<br/>
+                                        ya sea por cable Ethernet o mediante construido en módem<br/>
+                                        3.75G celular.</li>
+                                      <li>Módem GPRS / UMTS de alta velocidad inalámbrico<br/>
+                                        incorporado.</li>
+                                      <li>Soporta todos los sistemas de paquetes de datos celulares de<br/>
+                                        GPRS a HSPA (2.5G de 3.75G)</li>
+                                      <li>Soporte multibanda completo - módem trabaja a nivel<br/>
+                                        mundial.</li>
+                                      <li>Conexión por cable Ethernet para la conexión LAN local.</li>
+                                      <li>Módulo individual puede ser utilizado para varios controladores<br/>
+                                        en el mismo sitio (conectado a través de CAN o RS485).</li>
+                                      <li>MODBUS / TCP, SNMP soporte de protocolo - conexión<br/>
+                                        directa con la gestión y otros sistemas de construcción.</li>
+                                  </ul>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+</div>
+</div>
 <footer id="footer"></footer>
-
 <a href="http://www.enconexion.com.co/" target="_blank" id="enconexion"></a>
-
 </body>
 </html>
