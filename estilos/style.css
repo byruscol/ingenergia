@@ -1318,3 +1318,92 @@ body{
     display: block;
 }
 
+#sypArticulo {
+    height: 56px;
+    margin: 40px 0 0 20px;
+    width: 475px;
+}
+
+#sypGaleria{
+    width: 740px;
+    height: 256px;
+}
+
+.sypGalButton{
+    width: 173px;
+    height: 128px;
+    float: left;
+}
+
+#monre{
+    background: url("../img/monre.png") no-repeat;
+}
+
+#monre:hover{
+    background: url("../img/monre_hover.png") no-repeat;
+}
+
+#sypsincro{
+    background: url("../img/sypsincro.png") no-repeat;
+}
+
+#sypsincro:hover{
+    background: url("../img/sypsincro_hover.png") no-repeat;
+}
+
+#standby{
+    background: url("../img/standby.png") no-repeat;
+}
+
+#standby:hover{
+    background: url("../img/standby_hover.png") no-repeat;
+}
+
+#bombeo{
+    background: url("../img/bombeo.png") no-repeat;
+}
+
+#bombeo:hover{
+    background: url("../img/bombeo_hover.png") no-repeat;
+}
+
+#maqamarilla{
+    background: url("../img/maqamarilla.png") no-repeat;
+}
+
+#maqamarilla:hover{
+    background: url("../img/maqamarilla_hover.png") no-repeat;
+}
+
+#solmarinas{
+    background: url("../img/solmarinas.png") no-repeat;
+}
+
+#solmarinas:hover{
+    background: url("../img/solmarinas_hover.png") no-repeat;
+}
+
+#enerrenov{
+    background: url("../img/enerrenov.png") no-repeat;
+}
+
+#enerrenov:hover{
+    background: url("../img/enerrenov_hover.png") no-repeat;
+}
+
+.sypImg img{
+    width: 100%;
+}
+
+.sypDesc {
+    background: #000000 none repeat scroll 0 0;
+    color: #ffffff;
+    font-size: 12px;
+    margin: 60% 0 0;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    padding: 0 16px;
+    position: absolute;
+    width: 414px;
+    z-index: 9999;
+}
