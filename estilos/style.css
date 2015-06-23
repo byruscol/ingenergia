@@ -238,16 +238,15 @@ body{
      font-weight: bold;
  }
 
- .comapArticle{
-     width: 462px;
-     height: 174px;
-     overflow-x: hidden;
-     overflow-y: scroll;
-     float: left;
-     margin: 9px 0;
-     font-family: Arial;
-     font-size: 14px;
- } 
+.comapArticle {
+    float: left;
+    font-family: Arial;
+    font-size: 14px;
+    height: 194px;
+    margin: 9px 0;
+    overflow-x: auto;
+    width: 462px;
+}
  
  .comapArticle p {
      margin: 0 0 10px 10px;
@@ -271,19 +270,18 @@ body{
      box-sizing: initial;
  } 
  
- .pyaMenu a{
-     height: 45px;
-     width: 248px;
-     display: block;
-     background: url(../img/bgpyamenu.png) no-repeat;
-     font-family: Oswald,Tahoma, Verdana, Segoe, sans-serif;
-     font-size: 16px;
-     font-weight: bold;
-     padding: 20px 0 0 15px;
-     color: #ffffff;
-     box-sizing: initial;
-     text-decoration: none;
- }
+.pyaMenu a {
+    background: rgba(0, 0, 0, 0) url("../img/bgpyamenu.png") no-repeat scroll 0 0;
+    box-sizing: initial;
+    color: #ffffff;
+    display: block;
+    font-family: Oswald,Tahoma,Verdana,Segoe,sans-serif;
+    font-size: 16px;
+    height: 45px;
+    padding: 20px 0 0 15px;
+    text-decoration: none;
+    width: 248px;
+}
  
  .pyaMenuSelected{
      background: url(../img/bgpyamenuhover.png) no-repeat !important;
@@ -311,9 +309,9 @@ body{
      color: #383D42;
  }
  
- #tya, #mc {
+#tya, #mc {
     height: 60px;
-    padding: 5px 0 0 15px;
+    padding: 7px 0 0 15px;
 }
 
 #tya span, #ilnt span, #sincro span, #protec span, #mc span{
@@ -323,7 +321,7 @@ body{
     margin-right: 45px;
     margin-top: -15px;
     display: block;
-}
+}A
 
 #tya:hover span, #ilnt:hover span, #sincro:hover span, #protec:hover span, #mc:hover span{
     margin-right: 33px;
@@ -974,7 +972,7 @@ body{
 	color: #383D42;
 	font-family: Arial;
 	font-size: 14px;
-	margin: 15px 10px 0 0;
+	margin: -10px 10px 0 0;
 }
 
 #kit_bifuel p{
@@ -1016,7 +1014,7 @@ body{
 	color: #383D42;
 	font-family: Arial;
 	font-size: 14px;
-	margin: 15px 10px 0 0;
+	margin: -10px 10px 0 0;
 }
 
 #variadores p{
@@ -1054,7 +1052,7 @@ body{
 	color: #383D42;
 	font-family: Arial;
 	font-size: 14px;
-	margin: 20px 10px 0 0;
+	margin: -10px 10px 0 0;
 }
 
 #comap p{
@@ -1092,7 +1090,7 @@ body{
 	color: #383D42;
 	font-family: Arial;
 	font-size: 14px;
-	margin: 20px 15px 0 0;
+	margin: 0 15px 0 0;
 }
 
 #plantas_img{

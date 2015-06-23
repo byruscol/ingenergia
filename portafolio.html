@@ -8,17 +8,17 @@
 	hidroeléctricas, instalación y mantenimiento." />
 
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="../estilos/style.css" />
-	<link rel="stylesheet" href="../estilos/orbit-1.2.3.css" />
+	<link rel="stylesheet" type="text/css" href="estilos/style.css" />
+	<link rel="stylesheet" href="estilos/orbit-1.2.3.css" />
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
 	<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 
 	<!-- favicon -->
-	<link rel="icon" type="image/ico" href="../img/logo_ing_small.ico"/>
+	<link rel="icon" type="image/ico" href="img/logo_ing_small.ico"/>
 	
 	<!-- jQuery library -->
-	<script type src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/loadModules.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		function goto(id, t){
 		    //animate to the div id.
@@ -45,7 +45,9 @@
 	    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
-	 
+	 $(window).load(function() {
+               var m = new loadModules();
+           });
 	</script>
 
 	<title>Ingenergía</title>
@@ -56,37 +58,28 @@
 	<div id="header_fondo2"></div>
 
 	<div class="wrap">
-	<nav id="header" class="header_fix">
-		<a href="../index.html"><img src="../img/logo_ing.png" alt="ingenergia"></a>
-		<div id="menu">
-			<a href="empresa.html" class="pestana" id="empresa_tab"></a>
-			<a href="portafolio.html" class="pestana_section" id="portafolio_section"></a>
-			<a href="productos.html" class="pestana" id="productos_tab"></a>
-			<a href="proyectos.html" class="pestana" id="proyectos_tab"></a>
-			<a href="contacto.html" class="pestana" id="contacto_tab"></a>
-		</div>
-	</nav>
+	<nav id="header" class="header_fix"></nav>
 	<div id="content">
 		<div class="contentbox-wrapper">
 			<section id="servicios_menu">
 				<article id="menu_s">
 					<a href="#" OnClick="goto('#auto_co', this); return false" class="servicios_btn radial_gradient">		
-						<img src="../img/auto-co.png" alt="autogeneracion cogeneracion"/>
+						<img src="img/auto-co.png" alt="autogeneracion cogeneracion"/>
 						<span>Proyectos de auto y cogeneración</span>
 					</a>
 					
 					<a class="servicios_btn radial_gradient" href="#" OnClick="goto('#proyectos2', this); return false">
-						<img src="../img/energia.png" alt="proyectos electricos"/>
+						<img src="img/energia.png" alt="proyectos electricos"/>
 						<span>Proyectos eléctricos integrados</span>
 					</a>
 			
 					<a class="servicios_btn radial_gradient" href="#" OnClick="goto('#op_mant', this); return false">
-						<img src="../img/op_mant.png" alt="operacion mantenimiento"/>
+						<img src="img/op_mant.png" alt="operacion mantenimiento"/>
 						<span>Operación y manteniemiento</span>
 					</a>
 			
 					<a class="servicios_btn radial_gradient" href="#" OnClick="goto('#montajes', this); return false">
-						<img src="../img/montajes.png" alt="montajes"/>
+						<img src="img/montajes.png" alt="montajes"/>
 						<span style="margin: 15px 0 0 56px; float: left;">Montajes</span>
 					</a>
 					
@@ -97,22 +90,22 @@
 				<article class="portafolio_container">
 					<div id="portafolio_menu">
 						<a href="#" OnClick="goto('#auto_co', this); return false" class="menu_btn menu_btn_hover">
-							<img src="../img/auto-co_min.png" alt="autogeneracion cogeneracion"/>
+							<img src="img/auto-co_min.png" alt="autogeneracion cogeneracion"/>
 							<span>Auto y cogeneración</span>
 						</a>
 					
 						<a href="#" OnClick="goto('#proyectos2', this); return false" class="menu_btn">
-							<img src="../img/energia_min.png" alt="proyectos electricos"/>
+							<img src="img/energia_min.png" alt="proyectos electricos"/>
 							<span>Eléctricos integrados</span>
 						</a>
 
 						<a href="#" OnClick="goto('#op_mant', this); return false" class="menu_btn">
-							<img src="../img/op_mant_min.png" alt="operacion y mantenimiento"/>
+							<img src="img/op_mant_min.png" alt="operacion y mantenimiento"/>
 							<span>Operación y mtto</span>
 						</a>
 
 						<a href="#" OnClick="goto('#montajes', this); return false" class="menu_btn">
-							<img src="../img/montajes_min.png" alt="montajes"/>
+							<img src="img/montajes_min.png" alt="montajes"/>
 							<span style="float:left; margin:8px 0 0 10px;">Montajes</span>
 						</a>
 					</div>
@@ -127,7 +120,7 @@
 						<p>Producción simultanea de energía eléctrica y térmica (calor o frio), para un proceso productivo, a partir de la misma fuente primaria de energía. </p>
 					</div>
 					<div id="ciclo_solucion" class="radial_gradient">
-						<img src="../img/ciclo_solucion.png" alt="ciclo de solucion"/>
+						<img src="img/ciclo_solucion.png" alt="ciclo de solucion"/>
 					</div>
 					<a href="#" onClick="goto('#proyectos', this); return false" class="next_btn" id="next_btn_min"></a>
 				</article>
@@ -138,22 +131,22 @@
 					<a href="#" onClick="goto('#auto_co', this); return false" id="back_btn" class="back_btn"></a>
 					<div id="portafolio_menu">
 						<a href="#" OnClick="goto('#auto_co', this); return false" class="menu_btn menu_btn_hover">
-							<img src="../img/auto-co_min.png" alt="autogeneracion cogeneracion"/>
+							<img src="img/auto-co_min.png" alt="autogeneracion cogeneracion"/>
 							<span>Auto y cogeneración</span>
 						</a>
 					
 						<a href="#" OnClick="goto('#proyectos2', this); return false" class="menu_btn">
-							<img src="../img/energia_min.png" alt="proyectos electricos"/>
+							<img src="img/energia_min.png" alt="proyectos electricos"/>
 							<span>Eléctricos integrados</span>
 						</a>
 
 						<a href="#" OnClick="goto('#op_mant', this); return false" class="menu_btn">
-							<img src="../img/op_mant_min.png" alt="operacion y mantenimiento"/>
+							<img src="img/op_mant_min.png" alt="operacion y mantenimiento"/>
 							<span>Operación y mtto</span>
 						</a>
 
 						<a href="#" OnClick="goto('#montajes', this); return false" class="menu_btn">
-							<img src="../img/montajes_min.png" alt="montajes"/>
+							<img src="img/montajes_min.png" alt="montajes"/>
 							<span style="float:left; margin:8px 0 0 10px;">Montajes</span>
 						</a>
 					</div>
@@ -161,7 +154,7 @@
 						<p>Los proyectos de generación de energía en sitio, que se llevan a cabo bajo las modalidades:</p>
 						<div id="integradores" class="radial_gradient">
 							<h3 class="subtitulos">Proyectos llave en mano</h3>
-							<img align="center" src="../img/integradores.png" alt=""/>
+							<img align="center" src="img/integradores.png" alt=""/>
 						</div>
 					</div>
 					<div id="esco" class="radial_gradient">
@@ -170,7 +163,7 @@
 					</div>
 					<div id="esb" class="radial_gradient">
 						<p>Somos representantes de Cummins ESB y desarrollamos proyectos con turbinas  Kawasaki y Turbomach</p>
-						<img src="../img/cummins_esb.png" alt="cummins esb"/>
+						<img src="img/cummins_esb.png" alt="cummins esb"/>
 					</div>
 
 					
@@ -182,22 +175,22 @@
 					
 					<div id="portafolio_menu">
 						<a href="#" OnClick="goto('#auto_co', this); return false" class="menu_btn">
-							<img src="../img/auto-co_min.png" alt="autogeneracion y cogeneracion"/>
+							<img src="img/auto-co_min.png" alt="autogeneracion y cogeneracion"/>
 							<span>Auto y cogeneración</span>
 						</a>
 					
 						<a href="#" OnClick="goto('#proyectos2', this); return false" class="menu_btn menu_btn_hover">
-							<img src="../img/energia_min.png" alt="proyectos electricos"/>
+							<img src="img/energia_min.png" alt="proyectos electricos"/>
 							<span>Eléctricos integrados</span>
 						</a>
 
 						<a href="#" OnClick="goto('#op_mant', this); return false" class="menu_btn">
-							<img src="../img/op_mant_min.png" alt="operacion y mantenimiento"/>
+							<img src="img/op_mant_min.png" alt="operacion y mantenimiento"/>
 							<span>Operación y mtto</span>
 						</a>
 
 						<a href="#" OnClick="goto('#montajes', this); return false" class="menu_btn">
-							<img src="../img/montajes_min.png" alt="montajes"/>
+							<img src="img/montajes_min.png" alt="montajes"/>
 							<span style="float:left; margin:8px 0 0 10px;">Montajes</span>
 						</a>
 					</div>
@@ -214,8 +207,8 @@
 								<li>Equipo de ingeniería  asesoría en múltiples soluciones y tecnología.</li>
 							</ul>
 						</div>
-						<img id="electricos_img" src="../img/electricos.png" alt="proyectos electricos"/>
-						<img id="electricos_img2" src="../img/eaton.png" alt="eaton schneider"/>
+						<img id="electricos_img" src="img/electricos.png" alt="proyectos electricos"/>
+						<img id="electricos_img2" src="img/eaton.png" alt="eaton schneider"/>
 					</div>
 				</article>
 			</section>
@@ -224,22 +217,22 @@
 				<article class="portafolio_container">
 					<div id="portafolio_menu">
 						<a href="#" OnClick="goto('#auto_co', this); return false" class="menu_btn">
-							<img src="../img/auto-co_min.png" alt="autogeneracion y cogeneracion"/>
+							<img src="img/auto-co_min.png" alt="autogeneracion y cogeneracion"/>
 							<span>Auto y cogeneración</span>
 						</a>
 					
 						<a href="#" OnClick="goto('#proyectos2', this); return false" class="menu_btn">
-							<img src="../img/energia_min.png" alt="proyectos electricos"/>
+							<img src="img/energia_min.png" alt="proyectos electricos"/>
 							<span>Eléctricos integrados</span>
 						</a>
 
 						<a href="#" OnClick="goto('#op_mant', this); return false" class="menu_btn menu_btn_hover">
-							<img src="../img/op_mant_min.png" alt="operacion y mantenimiento"/>
+							<img src="img/op_mant_min.png" alt="operacion y mantenimiento"/>
 							<span>Operación y mtto</span>
 						</a>
 
 						<a href="#" OnClick="goto('#montajes', this); return false" class="menu_btn">
-							<img src="../img/montajes_min.png" alt="montajes"/>
+							<img src="img/montajes_min.png" alt="montajes"/>
 							<span style="float:left; margin:8px 0 0 10px;">Montajes</span>
 						</a>
 					</div>
@@ -253,7 +246,7 @@
 							</p>
 							
 						</div>
-						<img class="img" src="../img/operacion.png" alt="" />
+						<img class="img" src="img/operacion.png" alt="" />
 					</div>
 				</article>
 			</section>
@@ -262,22 +255,22 @@
 				<article class="portafolio_container">
 					<div id="portafolio_menu">
 						<a href="#" OnClick="goto('#auto_co', this); return false" class="menu_btn">
-							<img src="../img/auto-co_min.png" alt="auto y cogeneracion"/>
+							<img src="img/auto-co_min.png" alt="auto y cogeneracion"/>
 							<span>Auto y cogeneración</span>
 						</a>
 					
 						<a href="#" OnClick="goto('#proyectos2', this); return false" class="menu_btn">
-							<img src="../img/energia_min.png" alt="proyectos electricos"/>
+							<img src="img/energia_min.png" alt="proyectos electricos"/>
 							<span>Eléctricos integrados</span>
 						</a>
 
 						<a href="#" OnClick="goto('#op_mant', this); return false" class="menu_btn ">
-							<img src="../img/op_mant_min.png" alt="operacion y mantenimiento"/>
+							<img src="img/op_mant_min.png" alt="operacion y mantenimiento"/>
 							<span>Operación y mtto</span>
 						</a>
 
 						<a href="#" OnClick="goto('#montajes', this); return false" class="menu_btn menu_btn_hover">
-							<img src="../img/montajes_min.png" alt="montajes"/>
+							<img src="img/montajes_min.png" alt="montajes"/>
 							<span style="float:left; margin:8px 0 0 10px;">Montajes</span>
 						</a>
 					</div>
@@ -290,7 +283,7 @@
 							 Garantizamos la instalación con la aplicación de las normas vigentes. 
 							</p>
 						</div>
-						<img class="img" src="../img/montajes2.png" alt="montajes" />
+						<img class="img" src="img/montajes2.png" alt="montajes" />
 					</div>
 				</article>
 			</section>
@@ -300,18 +293,7 @@
 	</div>
 </div>
 
-<footer id="footer">
-	<div class="empresas_equitel">
-		<a href="http://www.equitel.com.co/" target="_blank"><img src="../img/equitel_logo.png" alt="equitel"/></a>
-		<div id="empresas">
-			<a href="http://www.cumandes.com/" target="_blank"><img src="../img/cumandes.png" alt="cummins de los andes"/></a>
-			<a href="http://www.gaf.com.co/" target="_blank"><img src="../img/gaf.png" alt="gaf"/></a>
-			<a href="http://www.ingenergia.com.co/" target="_blank"><img src="../img/inge.png" alt="ingenergia"/></a>
-			<a href="http://www.lapinternational.com.co/" target="_blank"><img src="../img/lap.png" alt="lap international"/></a>
-		</div>
-	</div>
-	<div id="habeas"><a href="../habeas/aviso.pdf" target="_blank">Aviso de privacidad</a> | <a href="../habeas/politica.pdf" target="_blank">Política de datos</a></div><div id="logo_c3" align="center"><a href="http://www.c3comunicaciones.com/" target="_blank"><img src="../img/logo-c3.png" alt="C3 comunicaciones"/></a></div>
-</footer>
+<footer id="footer"></footer>
 
 <a href="http://www.enconexion.com.co/" target="_blank" id="enconexion" class="enconexion"></a>
 
